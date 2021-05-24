@@ -1,0 +1,15 @@
+{
+  "name": "shared-types",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "echo started"
+  },
+  "main": "./src/types.ts",
+  "license": "MIT",
+  "author": {
+    "name": "Jack Herrington",
+    "email": "jherr@pobox.com"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
