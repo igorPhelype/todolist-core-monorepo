@@ -2,9 +2,12 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const deps = require("./package.json").dependencies;
+
+const todoListModuleURL = process.env.NODE_ENV === "production" ? "https://todolist-module.netlify.app/remoteEntry.js" : "http://localhost:8080/remoteEntry.js"
+
 module.exports = {
   output: {
-    publicPath: "http://localhost:8081/",
+    publicPath: "/",
   },
 
   resolve: {
@@ -43,7 +46,7 @@ module.exports = {
       name: "mainmodule",
       filename: "remoteEntry.js",
       remotes: {
-        "todolist-module": "todolistmodule@http://localhost:8080/remoteEntry.js",
+        "todolist-module": "todolistmodule@" + todoListModuleURL,
       },
       exposes: {},
       shared: require("./package.json").dependencies,
