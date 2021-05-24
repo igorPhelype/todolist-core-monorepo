@@ -4,10 +4,11 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 
 const todoListModuleURL = process.env.NODE_ENV === "production" ? "https://todolist-module.netlify.app/remoteEntry.js" : "http://localhost:8080/remoteEntry.js"
+const mainModuleUrl = process.env.NODE_ENV === "production" ? "https://todolist-monorepo.netlify.app/" : "http://localhost:8081/";
 
 module.exports = {
   output: {
-    publicPath: "/",
+    publicPath: mainModuleUrl,
   },
 
   resolve: {
