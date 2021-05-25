@@ -3,8 +3,11 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 
 const deps = require("./package.json").dependencies;
 
-const todoListModuleURL = process.env.NODE_ENV === "production" ? "https://todolist-module.netlify.app/remoteEntry.js" : "http://localhost:8080/remoteEntry.js"
-const mainModuleUrl = process.env.NODE_ENV === "production" ? "https://todolist-monorepo.netlify.app/" : "http://localhost:8081/";
+
+const prod = process.env.NODE_ENV === "production"
+const todoListModuleURL = prod ? "https://todolist-module.netlify.app/remoteEntry.js" : "http://localhost:8080/remoteEntry.js"
+const mainModuleUrl = prod ? "https://todolist-monorepo.netlify.app/" : "http://localhost:8081/";
+const headerModuleURL = prod ? "https://header-module.netlify.app/remoteEntry.js" : "http://localhost:8082/remoteEntry.js"
 
 module.exports = {
   output: {
@@ -48,12 +51,14 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {
         "todolist-module": "todolistmodule@" + todoListModuleURL,
+        "header-module": "headermodule@" + headerModuleURL,
       },
       exposes: {},
       shared: require("./package.json").dependencies,
     }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
+      headerModuleURL
     }),
   ],
 };
