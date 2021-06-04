@@ -26,10 +26,7 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.10.1",
     "webpack-cli": "3.3.11",
-    "webpack-dev-server": "3.11.0",
-    "pomo-module": "1.0.0",
-    "shared-types": "1.0.0",
-    "todolist-module": "1.0.0"
+    "webpack-dev-server": "3.11.0"
   },
   "dependencies": {
     "react": "^16.13.0",
