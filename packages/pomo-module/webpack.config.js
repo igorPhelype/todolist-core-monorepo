@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const deps = require("./package.json").dependencies;
-const todoListModuleUrl = process.env.NODE_ENV === "production" ? "https://todolist-module.netlify.app/" : "http://localhost:8083/";
+const todoListModuleUrl = process.env.NODE_ENV === "production" ? "https://pomo-module.netlify.app/" : "http://localhost:8083/";
 
 module.exports = {
   output: {
