@@ -29,7 +29,7 @@ module.exports = {
       {
         test: /\.svelte$/,
         use: {
-          loader: "svelte-loader-hot",
+          loader: "svelte-loader",
           options: {
             emitCss: false,
             hotReload: true,
