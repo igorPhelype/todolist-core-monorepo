@@ -4,10 +4,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import PomoPage from "./pages/PomoPage";
 
-const TodoListModuleApp = () => {
+const PomoModuleApp = () => {
   return <PomoPage />;
 };
 
-ReactDOM.render(<TodoListModuleApp />, document.getElementById("app"));
+ReactDOM.render(<PomoModuleApp />, document.getElementById("app"));
 
-export default TodoListModuleApp;
+export default PomoModuleApp;

@@ -8,6 +8,7 @@ const prod = process.env.NODE_ENV === "production"
 const todoListModuleURL = prod ? "https://todolist-module.netlify.app/remoteEntry.js" : "http://localhost:8080/remoteEntry.js"
 const mainModuleUrl = prod ? "https://todolist-monorepo.netlify.app/" : "http://localhost:8081/";
 const headerModuleURL = prod ? "https://header-module.netlify.app/remoteEntry.js" : "http://localhost:8082/remoteEntry.js"
+const pomoModuleURL = prod ? "https://pomo-module.netlify.app/remoteEntry.js" : "http://localhost:8083/remoteEntry.js"
 
 module.exports = {
   output: {
@@ -52,6 +53,7 @@ module.exports = {
       remotes: {
         "todolist-module": "todolistmodule@" + todoListModuleURL,
         "header-module": "headermodule@" + headerModuleURL,
+        "pomo-module": "pomomodule@" + pomoModuleURL,
       },
       exposes: {},
       shared: require("./package.json").dependencies,

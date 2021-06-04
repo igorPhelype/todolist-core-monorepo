@@ -13,7 +13,7 @@ function PomoTabs({ selectedTab, onChange }: PomoTabsProps) {
       {Object.keys(PomoTabEnum).map((key) => {
         const currentPomoTab = PomoTabEnum[key];
         return (
-          <button onClick={() => onChange(currentPomoTab)}>
+          <button key={key} onClick={() => onChange(currentPomoTab)}>
             {currentPomoTab}
           </button>
         );

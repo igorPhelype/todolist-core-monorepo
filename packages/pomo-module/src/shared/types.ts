@@ -3,3 +3,7 @@ export enum PomoTabEnum {
   shortBreak = "Short Break",
   longBreak = "Long Break",
 }
+
+export type PomoTabMinutesMap = {
+  [key in PomoTabEnum]: number;
+};
