@@ -13,6 +13,7 @@ function PomoPage() {
   return (
     <>
       <PomoTabs selectedTab={selectedTab} onChange={setSelectedTab} />
+
       <PomoTimer
         incrementPomoCycles={() =>
           setPomoCycles((currentPomoCycles) => currentPomoCycles + 1)
